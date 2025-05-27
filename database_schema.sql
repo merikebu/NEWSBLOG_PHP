@@ -1,4 +1,3 @@
-
 -- Blog Platform Database Schema
 -- MySQL Database Setup
 
@@ -33,10 +32,11 @@ CREATE TABLE posts (
     FOREIGN KEY (approved_by) REFERENCES users(id) ON DELETE SET NULL
 );
 
--- Testimonials table
+-- Testimonials table with ratings
 CREATE TABLE testimonials (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
+    rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
     content TEXT NOT NULL,
     company VARCHAR(100),
     image_path VARCHAR(255),
