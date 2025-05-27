@@ -161,5 +161,5 @@ class Posts {
     }
 }
 
-$posts = new Posts($pdo);
+$posts = new Posts($pdo)
 ?>
